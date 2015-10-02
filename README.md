@@ -22,7 +22,7 @@ fr:
         sub_id_level1: "Une chaine de caractères à traduire"
         sub_id_level1: "Une autre chaine de caractères à traduire"
 ```
-Le fichier est donc constitué d'identifiants (ici en vert), qu'il ne faut pas traduire, et les chaines de caractères à traduire(ici en bleu).
+Le fichier est donc constitué d'identifiants, qu'il ne faut pas traduire, et les chaines de caractères à traduire.
 Il est important de ne pas altérer la structure du fichier ni les identifiant car cela provoquerai un bug dans l'application en effet les traductions ne seront plus accessibles.
 
 Pour information, les traductions sont ensuite récupérées dans le code de l'application de cette manière:
@@ -32,6 +32,23 @@ Pour information, les traductions sont ensuite récupérées dans le code de l'a
     #cela donnera comme résultat "Encore une chaine à traduire" si la langue est configuré sur francais
 ```
 D'où l'importance de ne pas altérer la structure du fichier.
+
+### Variables présentes dans les chaines de caractère
+Il est possible de rencontrer assez rarement des variables dans les chaines à traduire, elle sont toujours représentés par le schéma %{nom de la variable}
+
+Par exemple vous pouvez rencontrer ce cas dans les fichiers de mysaven:
+``` yaml
+fr:
+    mailer:
+        add_candidate:
+            welcome: "Bonjour %{username}"
+            text02: "Pour compléter votre évaluation, cliquez sur ce lien"
+            button_text: "Compléter mon évaluation"
+            text03: "Répondre à ce questionnaire ne vous prendra pas plus de dix minutes."
+        survey_complete:
+            text01: "les résultats de %{username} sont disponibles dans votre tableau de bord Saven."
+```
+On remarque la variable %{username} à deux reprises, ces variables ne sont pas à traduire et seront remplacé dans l'application par le nom du candidat. L'utilisation de la coloration syntaxique facilite ici le repérage des variables.
 
 ### Outils pour faciliter l'utilisation du yaml
 Il existe de nombreux editeurs de textes pouvant ouvrir le yml (le bloc note suffit, au final un fichier yml n'est rien d'autre qu'un fichier txt) mais il existe des editeurs permettant de colorer les fichier (comme pour les exemple ci dessus) ce qui rend la lecture et l'utilisation de ce format plus facile.
