@@ -22,7 +22,7 @@ fr:
         sub_id_level1: "Une chaine de caractères à traduire"
         sub_id_level1: "Une autre chaine de caractères à traduire"
 ```
-Le fichier est donc constitué d'identifiants, qu'il ne faut pas traduire, et les chaines de caractères à traduire.
+Le fichier est donc constitué d'identifiants (ici en vert), qu'il ne faut pas traduire, et les chaines de caractères à traduire(ici en bleu).
 Il est important de ne pas altérer la structure du fichier ni les identifiant car cela provoquerai un bug dans l'application en effet les traductions ne seront plus accessibles.
 
 Pour information, les traductions sont ensuite récupérées dans le code de l'application de cette manière:
