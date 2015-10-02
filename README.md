@@ -50,6 +50,23 @@ fr:
 ```
 On remarque la variable %{username} à deux reprises, ces variables ne sont pas à traduire et seront remplacé dans l'application par le nom du candidat. L'utilisation de la coloration syntaxique facilite ici le repérage des variables.
 
+### Structures d'aides a ne pas traduire
+Parfois certains elements sont présent dans les fichiers mais ne nécessitent pas d'être traduits. Par exemple dans les fichiers homme/femme de resultat se présentent de la manière suivante: 
+``` yaml
+texts:
+    t01:
+        text_1:
+            tag: p
+            class: ""
+            text: "Ce n’est pas le monde extérieur qui cause nos comportements ou nos émotions..."
+        text_2:
+            tag: p
+            class: ""
+            text: "Dans le texte qui suit, vous allez découvrir comment se positionne ..."
+```
+Ici les chaines tag: "p" et class: "" ne sont pas a traduire, se sont des aide à l'integration de ces chaines de caratère dans l'application. en règle générale, ce qui ne ressemble pas à du language construit n'est pas à traduire.
+Ce sont des cas spécifiques aux textes de résultats pour obtenir une génération de pdf optimale par la suite. La plupart du temps, vous ne rencontrerez pas d'autres cas que ceux là.
+
 ### Outils pour faciliter l'utilisation du yaml
 Il existe de nombreux editeurs de textes pouvant ouvrir le yml (le bloc note suffit, au final un fichier yml n'est rien d'autre qu'un fichier txt) mais il existe des editeurs permettant de colorer les fichier (comme pour les exemple ci dessus) ce qui rend la lecture et l'utilisation de ce format plus facile.
 
